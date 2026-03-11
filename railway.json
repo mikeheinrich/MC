@@ -1,0 +1,23 @@
+{
+  "api": {
+    "webapp": true,
+    "commands": [
+      "cd backend && npm install -g nodemon",
+      "node server.js"
+    ],
+    "package": {
+      "port": 3001
+    }
+  },
+  "web": {
+    "webapp": true,
+    "commands": [
+      "cd frontend && npm install && npm run build",
+      "npx serve -s ./dist -l 5173"
+    ],
+    "package": {
+      "port": 5173
+    }
+  }
+}
+
