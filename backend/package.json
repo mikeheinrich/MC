@@ -13,6 +13,7 @@
   "keywords": ["job-tracking", "mechanical", "contractors", "express", "mongodb"],
   "author": "",
   "license": "MIT",
+  "packageManager": "npm@11.6.2",
   "dependencies": {
     "express": "^4.18.2",
     "mongoose": "^7.5.0",
