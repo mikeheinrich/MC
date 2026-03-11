@@ -12,4 +12,7 @@ export default defineConfig({
       },
     },
   },
+  preview: {
+    allowedHosts: ['mc-frontend-production-315f.up.railway.app'],
+  },
 });
