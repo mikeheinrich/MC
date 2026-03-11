@@ -15,7 +15,7 @@ import reportRoutes from './src/routes/reports.js';
 // Import middleware
 import errorHandler from './src/middleware/errorHandler.js';
 import { connectDB } from './src/config/database.js';
-import { PORT, TIMEOUT } from './env.config.js';
+import { PORT } from './env.config.js';
 
 // Load environment variables
 dotenv.config();
@@ -78,15 +78,8 @@ app.use('*', (req, res) => {
   });
 });
 
-// Start server with optional Railway timeout safeguard
-const server = app.listen(PORT, () => {
+// Start server
+app.listen(PORT, () => {
   console.log(`Server running on port ${PORT} in ${process.env.NODE_ENV} mode`);
   console.log(`Health check available at: http://localhost:${PORT}/api/health`);
 });
-
-if (process.env.RAILWAY_ENVIRONMENT || process.env.RAILWAY_PROJECT_ID) {
-  setTimeout(() => {
-    console.log('Railway timeout safeguard activated');
-    server.close();
-  }, Math.max(TIMEOUT - 1000, 1000));
-}
